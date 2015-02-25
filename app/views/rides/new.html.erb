@@ -1,0 +1,297 @@
+
+    <head>
+        <title>Safe Ride Digital</title>
+        <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  
+
+    <style type="text/css">
+      /* Space out content a bit */
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-style: Helvetica;
+      }
+      /* Everything but the jumbotron gets side spacing for mobile first views */
+      .header, .marketing, .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      /* Custom page header */
+      .header {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      /* Make the masthead heading the same height as the navigation */
+      .header h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+      }
+      /* Custom page footer */
+      .footer {
+        padding-top: 19px;
+        color: #777;
+        border-top: 1px solid #e5e5e5;
+      }
+      .selectpicker {
+
+    border: 1px solid #ccc;
+    width: 268px;
+    padding:5px;
+    line-height:1;
+    overflow: hidden;
+    height:34px;
+
+      }
+
+      .text_field {
+            border: 1px solid #ccc;
+    width: 268px;
+    padding:5px;
+    line-height:1;
+    overflow: hidden;
+    height:34px;
+
+      }
+
+      /* Customize container */
+      @media(min-width: 768px) {
+        .container {
+          max-width: 730px;
+        }
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 40px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      /* Responsive: Portrait tablets and up */
+      @media screen and(min-width: 768px) {
+        /* Remove the padding we set earlier */
+        .header, .marketing, .footer {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        /* Space out the masthead */
+        .header {
+          margin-bottom: 30px;
+        }
+        /* Remove the bottom border on the jumbotron for visual effect */
+        .jumbotron {
+          border-bottom: 0;
+        }
+      }
+    </style>
+
+  <script>
+  $(function() {
+    var availableTags = [
+      "ITS",
+      "Riverview A",
+      "Riverview B",
+      "Riverview C",
+      "Riverview D",
+      "Riverview E",
+      "Todd Union",
+      "Brooks Crossing",
+      "Medical Center",
+      "Laser Lab",
+      "Chambers",
+      "Fairchild",
+      "Gale",
+      "Kendrick",
+      "Munro",
+      "Slater",
+      "Jackson Court",
+      "Valentine",
+      "Dekiewiet",
+      "Maisonettes",
+    ];
+    $( "#pickups" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+
+   <script>
+  $(function() {
+    var availableTags = [
+      "ITS",
+      "Riverview A",
+      "Riverview B",
+      "Riverview C",
+      "Riverview D",
+      "Riverview E",
+      "Todd Union",
+      "Brooks Crossing",
+      "Medical Center",
+      "Laser Lab",
+      "Chambers",
+      "Fairchild",
+      "Gale",
+      "Kendrick",
+      "Munro",
+      "Slater",
+      "Jackson Court",
+      "Valentine",
+      "Dekiewiet",
+      "Maisonettes",
+    ];
+    $( "#dropoffs" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+
+<script type="text/javascript">
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),ap;
+     if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nyear<1000) nyear+=1900;
+if(nmin<=9) nmin="0"+nmin;
+
+document.getElementById('clockbox').innerHTML=""+(nmonth+1)+"/"+ndate+"/"+nyear+" "+nhour+":"+nmin+ap+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+
+                <li> <strong>Current time:</strong><div id="clockbox"></div> </li>
+                </ul>
+<img src="http://s9.postimg.org/d8h5097mz/SAf1.png" border="0" style="float:left"/>
+                <h2 class="text-muted">Safe Ride Digital</h2>
+            </div>
+            <div class="jumbotron">
+                <h3>Safe Ride Request</b></h3>
+
+<%= form_for :rides, url: rides_path do |f| %>
+  <p>Your full name:</p>
+   <!-- <%= f.label :Name %><br> -->
+   <%= f.text_field :name, { class: "text_field" } %>
+  </p>
+
+<div>
+  <p>I'm currently located at... </p>
+  <input id="pickups" class="text_field">
+</div>
+
+<br>
+
+
+<div>
+  <p>Please drop me off at... </p>
+  <input id="dropoffs" class="text_field">
+</div>
+
+<br>
+<p>Any other passengers tagging along? </p>
+<%= f.select :Passengers, [["Just me"],["+1 Passenger"], ["+2 Passengers"]], { label: "In addition to myself, also pick up: "}, { class: "selectpicker"} %>
+<br><br>
+<p>Do you have any comments?</p>
+  <%= f.text_field :comments, { class: "text_field"} %>
+
+<br><br>
+  <p>
+    <%= f.submit :Submit! %>
+  </p>
+<% end %>
+
+<!--
+<form>
+
+
+        <li class="input select optional" id="gem_awesomeness_input">
+          <label class="label" for="gem_awesomeness">Pick me up from...</label>
+<select id="gem_awesomeness" name="gem[awesomeness]">
+
+          <option value="1">IT Center (Rush Rhees Library)</option>
+          <option value="2">Carlson Library</option>
+          <option value="3">Todd Union</option>
+          <option value="4">Hill Court</option>
+          <option value="5">Southside</option>
+          <option value="6">Riverview Apartments</option>
+
+          </li>
+
+        <li class="input select optional" id="gem_awesomeness_input">
+          <label class="label" for="gem_awesomeness">Pick me up from...</label>
+<select id="gem_awesomeness" name="gem[awesomeness]">
+
+          <option value="1">IT Center (Rush Rhees Library)</option>
+          <option value="2">Carlson Library</option>
+          <option value="3">Todd Union</option>
+          <option value="4">Hill Court</option>
+          <option value="5">Southside</option>
+          <option value="6">Riverview Apartments</option>
+
+          </li>
+
+
+        <li class="input radio optional">
+          <fieldset class="choices">
+            <label class="label"><label>In addition to myself, please pick up: </label>
+            <ol class="choices-group">
+              <li class="choice">
+                <label><input id="gem_rate_five" name="gem[rate]" type="radio" checked="checked">+1 Passenger</label></label>
+              </li>
+              <li class="choice">
+                <label><input id="gem_rate_four" name="gem[rate]" type="radio">+2 Passengers</label></label>
+              </li>
+              <li class="choice">
+                <label><input id="gem_rate_three" name="gem[rate]" type="radio">+3 Passengers</label></label>
+              </li>
+          </fieldset>
+        </li>
+
+
+    <fieldset class="buttons">
+      <ol>
+        <li class="button commit">
+          <input class="create" id="gem_submit" type="submit">
+        </li>
+      </ol>
+    </fieldset>
+-->
+   </div>
+            <div class="footer">
+                <p>&copy; DMS372/373 Capstone</p>
+            </div>
+        </div><!-- /container -->
+    </body>

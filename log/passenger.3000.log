@@ -1,0 +1,42 @@
+[ 2014-12-07 03:20:41.1062 23202/0x7fff73009310 agents/Watchdog/Main.cpp:538 ]: Options: { 'analytics_log_user' => 'mkerem', 'cleanup_pidfiles' => 'L3Zhci9mb2xkZXJzL2Y4L253eWc4aDluM2sxXzRrN3FtZmN3N3ZqdzAwMDBnbi9UL3Bhc3Nlbmdlci1zdGFuZGFsb25lLjE3c2h1ZXkvdGVtcF9kaXJfdG91Y2hlci5waWQ=', 'default_group' => 'staff', 'default_python' => 'python', 'default_ruby' => '/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/bin/ruby', 'default_user' => 'mkerem', 'log_level' => '0', 'max_pool_size' => '6', 'passenger_root' => '/var/folders/f8/nwyg8h9n3k1_4k7qmfcw7vjw0000gn/T/passenger-standalone.17shuey/locations.ini', 'passenger_version' => '4.0.53', 'pool_idle_time' => '300', 'prestart_urls' => 'aHR0cDovLzAuMC4wLjA6MzAwMAA=', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'false', 'web_server_passenger_version' => '4.0.53', 'web_server_pid' => '23201', 'web_server_type' => 'nginx', 'web_server_worker_gid' => '-1', 'web_server_worker_uid' => '-1' }
+[ 2014-12-07 03:20:41.9605 23205/0x7fff73009310 agents/HelperAgent/Main.cpp:650 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.23201/generation-0/request
+[ 2014-12-07 03:20:42.3554 23209/0x7fff73009310 agents/LoggingAgent/Main.cpp:321 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.23201/generation-0/logging
+[ 2014-12-07 03:20:42.3556 23202/0x7fff73009310 agents/Watchdog/Main.cpp:728 ]: All Phusion Passenger agents started!
+App 23224 stdout: 
+[ 2014-12-07 03:21:26.2375 23205/0x10596d000 Pool2/SmartSpawner.h:298 ]: Preloader for /Users/mkerem/Documents/test/blog started on PID 23224, listening on unix:/tmp/passenger.1.0.23201/generation-0/backends/preloader.ylgerp
+App 23247 stdout: 
+App 23248 stdout: 
+App 23258 stdout: 
+App 29055 stdout: 
+[ 2014-12-07 12:14:28.6844 23205/0x1060b4000 Pool2/Implementation.cpp:287 ]: Could not spawn process for application /Users/mkerem/Documents/test/blog: An error occurred while starting up the preloader: it did not write a startup response in time.
+  Error ID: 99e91fc1
+  Error details saved to: /tmp/passenger-error-Ery3pS.html
+  Message from application: An error occurred while starting up the preloader: it did not write a startup response in time. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+(empty)
+
+App 29965 stdout: 
+[ 2014-12-07 12:38:13.1780 23205/0x1061de000 Pool2/SmartSpawner.h:298 ]: Preloader for /Users/mkerem/Documents/test/blog started on PID 29965, listening on unix:/tmp/passenger.1.0.23201/generation-0/backends/preloader.1rcqvr8
+App 29999 stdout: 
+App 32675 stdout: 
+[ 2014-12-07 13:50:21.8232 23205/0x106560000 Pool2/SmartSpawner.h:298 ]: Preloader for /Users/mkerem/Documents/test/blog started on PID 32675, listening on unix:/tmp/passenger.1.0.23201/generation-0/backends/preloader.1y0kefi
+App 32703 stdout: 
+App 33108 stdout: 
+[ 2014-12-07 13:59:56.0721 23205/0x1062e1000 Pool2/SmartSpawner.h:298 ]: Preloader for /Users/mkerem/Documents/test/blog started on PID 33108, listening on unix:/tmp/passenger.1.0.23201/generation-0/backends/preloader.xzmvd4
+App 33146 stdout: 
+App 33193 stdout: 
+App 48236 stdout: 
+[ 2014-12-08 18:47:41.4610 23205/0x107a9e000 Pool2/SmartSpawner.h:298 ]: Preloader for /Users/mkerem/Documents/test/blog started on PID 48236, listening on unix:/tmp/passenger.1.0.23201/generation-0/backends/preloader.a80wrz
+App 48261 stdout: 
+App 49265 stdout: 
+[ 2014-12-08 19:19:52.8065 23205/0x107bff000 Pool2/SmartSpawner.h:298 ]: Preloader for /Users/mkerem/Documents/test/blog started on PID 49265, listening on unix:/tmp/passenger.1.0.23201/generation-0/backends/preloader.1s1bcrb
+App 49290 stdout: 
+App 52746 stdout: 
+[ 2014-12-08 21:17:39.3708 23205/0x10810a000 Pool2/Implementation.cpp:287 ]: Could not spawn process for application /Users/mkerem/Documents/test/blog: An error occurred while starting up the preloader: it did not write a startup response in time.
+  Error ID: 1a03dc49
+  Error details saved to: /tmp/passenger-error-cC9CA4.html
+  Message from application: An error occurred while starting up the preloader: it did not write a startup response in time. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+(empty)
+
+[ 2014-12-08 21:47:47.4303 23209/0x7fff73009310 agents/LoggingAgent/Main.cpp:289 ]: Caught signal, exiting...

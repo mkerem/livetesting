@@ -1,0 +1,33 @@
+<h1>Editing this request...</h1>
+ 
+<%= form_for :rides, url: rides_path(@ride), method: :patch do |f| %>
+  
+
+<!-- this is where you would insert the code about any errors in the submission, it would display the info about what went wrong -->
+
+
+<%= form_for :rides, url: rides_path do |f| %>
+<p>Your full name:</p>
+<%= f.text_field :name %>
+</p>
+
+
+<p>I'm currently located at...</p>
+<!-- <%= f.label :"I am currently located at..." %> <br> -->
+<%= f.select :Present, [["IT Center (Rush Rhees Library)"], ["Carlson"], ["Todd Union"], ["Hill Court"], ["Southside"], ["Riverview Apartments"]], { label: "I am currently located at..." }, { class: "selectpicker" } %>
+
+<br>
+<br>
+
+<p>Please drop me off at....</p>
+<!-- <%= f.label :"Please drop me off at..." %> <br> -->
+<%= f.select :Dropoff, [["Riverview Apartments"], ["IT Center (Rush Rhees Library)"], ["Carlson Library"], ["Todd Union"], ["Hill Court"], ["Southside"]], { label: "Please drop me off at..." }, { class: "selectpicker" } %>
+
+<br>
+<br>
+<p>Any other passengers tagging along? </p>
+<%= f.select :Passengers, [["Just me!"],["+1 Passenger"], ["+2 Passengers"]], { label: "In addition to myself, also pick up: "}, { class: "selectpicker"} %>
+
+
+<% end %>
+ 

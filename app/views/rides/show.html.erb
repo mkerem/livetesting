@@ -1,0 +1,144 @@
+  <head>
+    <title>Confirm Request</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      /* Space out content a bit */
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      /* Everything but the jumbotron gets side spacing for mobile first views */
+      .header, .marketing, .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      /* Custom page header */
+      .header {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      /* Make the masthead heading the same height as the navigation */
+      .header h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+      }
+      h2, h3 { font-family: helvetica;}
+      /* Custom page footer */
+      .footer {
+        padding-top: 19px;
+        color: #777;
+        border-top: 1px solid #e5e5e5;
+      }
+      /* Customize container */
+      @media(min-width: 768px) {
+        .container {
+          max-width: 730px;
+        }
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 40px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      /* Responsive: Portrait tablets and up */
+      @media screen and(min-width: 768px) {
+        /* Remove the padding we set earlier */
+        .header, .marketing, .footer {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        /* Space out the masthead */
+        .header {
+          margin-bottom: 30px;
+        }
+        /* Remove the bottom border on the jumbotron for visual effect */
+        .jumbotron {
+          border-bottom: 0;
+        }
+      }
+    </style>
+
+    <script type="text/javascript">
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),ap;
+     if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nyear<1000) nyear+=1900;
+if(nmin<=9) nmin="0"+nmin;
+
+document.getElementById('clockbox').innerHTML=""+(nmonth+1)+"/"+ndate+"/"+nyear+" "+nhour+":"+nmin+ap+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+  </head>
+
+ <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <!-- <li class="active">
+                        <a href="#">Welcome</a>
+                    </li> -->
+
+                       <li> <strong>Current time:</strong><div id="clockbox"></div> </li>
+               
+                </ul>
+<img src="http://s9.postimg.org/d8h5097mz/SAf1.png" border="0" style="float:left"/>
+                <h2 class="text-muted">Safe Ride Digital</h2>
+            </div>
+
+<div class="jumbotron">
+<title>Confirmation</title>
+
+<center><h2>
+
+Thanks for using Safe Ride Digital!<br>
+</h2>
+<h3>Below is the information the dispatcher received: <br> <br></h3>
+
+<h3 style = "text-align:left">
+  <strong>Name: </strong>
+  <%= @rides.name %>
+<br>
+<strong>Passengers: </strong>
+<%= @rides.Passengers %>
+<br>
+</h3>
+<br>
+<h3>
+Please email us at saferidedigital@googlegroups.com if you have any questions, comments, concerns, or feedback!
+</h3>
+</center>
+</div>
+      <div class="footer">
+        <p>&copy; DMS372: Capstone</p>
+      </div>
+    </div>
+    <!-- /container -->
+  </body>

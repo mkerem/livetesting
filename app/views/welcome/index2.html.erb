@@ -1,0 +1,181 @@
+
+    <head>
+        <title>Safe Ride Digital</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.0.0/amelia/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        
+<script>
+    (function ($) {
+          $(document).ready(function() {
+          $("#show-example").click(function () {
+             if ($('#example').is(":visible")) {
+                 $(this).html($(this).html().replace(/Hide/, 'Show'));
+             } else {
+                 $(this).html($(this).html().replace(/Show/, 'Hide'));
+             }
+             // Do it afterwards as the operation is async
+             $("#example").slideToggle("slow");
+          });
+      });
+  })(jQuery);
+</script>
+
+<script>
+(function ($) {
+	$(document).ready(function() {
+	$("#show-example2").click(function () {
+	if ($('#example2').is(":visible")) {
+	$(this).html($(this).html().replace(/Hide/, 'Show'));
+	} else {
+	$(this).html($(this).html().replace(/Show/, 'Hide'));
+	}
+	$("#example2").slideToggle("slow");
+	});
+	});
+})(jQuery);
+</script>
+
+
+<style type="text/css">
+            /* Space out content a bit */
+            body {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            /* Everything but the jumbotron gets side spacing for mobile first views */
+            .header, .marketing, .footer {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            /* Custom page header */
+            .header {
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+  h2, h3 {
+font-family: helvetica neue;
+}
+
+ h4{
+font-size: 14px;
+}
+            /* Make the masthead heading the same height as the navigation */
+            .header h3 {
+                margin-top: 0;
+                margin-bottom: 0;
+                line-height: 40px;
+                padding-bottom: 19px;
+            }
+            /* Custom page footer */
+            .footer {
+                padding-top: 19px;
+                color: #777;
+                border-top: 1px solid #e5e5e5;
+            }
+            /* Customize container */
+            @media(min-width: 768px) {
+                .container {
+                    max-width: 730px;
+                }
+            }
+            .container-narrow > hr {
+                margin: 30px 0;
+            }
+            /* Main marketing message and sign up button */
+            .jumbotron {
+                text-align: center;
+                border-bottom: 1px solid #e5e5e5;
+            }
+            .jumbotron .btn {
+                font-size: 21px;
+                padding: 14px 24px;
+            }
+            /* Supporting marketing content */
+            .marketing {
+                margin: 40px 0;
+            }
+            .marketing p + h4 {
+                margin-top: 28px;
+            }
+            /* Responsive: Portrait tablets and up */
+            @media screen and(min-width: 768px) {
+                /* Remove the padding we set earlier */
+                .header, .marketing, .footer {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                /* Space out the masthead */
+                .header {
+                    margin-bottom: 30px;
+                }
+                /* Remove the bottom border on the jumbotron for visual effect */
+                .jumbotron {
+                    border-bottom: 0;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <!-- <li class="active">
+                        <a href="#">Welcome</a>
+                    </li> -->
+                    <li>
+			<%= link_to 'Dispatch', controller: 'dispatch' %>
+                        <!-- <a href="dispatch#index">Dispatch</a> -->
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul><h2 class="text-muted">Safe Ride Digital</h2>
+            </div>
+            <div class="jumbotron">
+                <h3>Welcome to <b>Safe Ride Digital!</b></h3>
+                <p class="lead"><i>Safe Ride Digital</i> is an online portal to request after-hours transportation from River Campus properties and residences.</p>
+
+<a id="show-example" onclick="false">I'm new to Safe Ride. May I have more information?</a>
+
+<div id="example" style="display: none"> 
+<h4>SafeRide is made possible by the SA Government and UR Security Service. This portal exists as a separate medium to allow students to request pick-ups via their smartphone or laptop (or any device with a Wi-Fi connection). Any difficulties or technicalities that may arise remain independent of the previously mentioned entities.<br><br>
+                <b>Hours of Operation:</b> 11:00 p.m. – 4:00 a.m. everyday during the academic year (no breaks or University holidays)<br>
+                <b>River Campus Locations:</b> IT Center (Rush Rhees Library), Carlson Library, Todd Union<b>
+ <br>Residential Locations:</b> Hill Court, Southside, Riverview Apartments<br>
+</h4>
+ </div> 
+                <p></p>
+                <p>
+<a id="show-example2" onclick="false">I'm ready to request a ride!</a>
+
+
+<div id="example2" style="display:none">
+        <h3>Only University of Rochester undergraduates may use this service. Please sign in with your NetID and password so that we may verify this.</h3>
+      </center>
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading"></h2>
+        <input type="text" class="form-control" placeholder="NetID">
+        <input type="password" class="form-control" placeholder="Password">
+        <label class="checkbox">
+        <input type="checkbox" value="remember-me"><h5 style="text-align:left">Remember me</h5></label></style>
+
+        <p><a class="btn btn-block btn-primary btn-lg" href="rides/new">Sign In</a></p>
+        <!-- <button class="btn btn-block btn-primary btn-lg" onlick="#" href="home.html">Sign in</button> 
+</form> -->
+<!-- 
+<a class="btn btn-block btn-link btn-lg" href="rides/new">Let's request a ride!</a></p>
+      -->   </div>
+
+   </div>
+            <div class="footer">
+                <p>&copy; DMS372 Capstone Project</p>
+            </div>
+        </div><!-- /container -->
+    </body>
+
+

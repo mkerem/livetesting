@@ -1,0 +1,144 @@
+ 
+  <head>
+    <title>SafeRide | DMS371</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+      /* Space out content a bit */
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      /* Everything but the jumbotron gets side spacing for mobile first views */
+      .header, .marketing, .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      /* Custom page header */
+      .header {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      /* Make the masthead heading the same height as the navigation */
+      .header h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+      }
+      /* Custom page footer */
+      .footer {
+        padding-top: 19px;
+        color: #777;
+        border-top: 1px solid #e5e5e5;
+      }
+      /* Customize container */
+      @media(min-width: 768px) {
+        .container {
+          max-width: 730px;
+        }
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        text-align: center;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+      /* Supporting marketing content */
+      .marketing {
+        margin: 40px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      /* Responsive: Portrait tablets and up */
+      @media screen and(min-width: 768px) {
+        /* Remove the padding we set earlier */
+        .header, .marketing, .footer {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        /* Space out the masthead */
+        .header {
+          margin-bottom: 30px;
+        }
+        /* Remove the bottom border on the jumbotron for visual effect */
+        .jumbotron {
+          border-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li>
+            <a href="#">Welcome</a>
+          </li>
+          <li class="active">
+            <a href="#">Pick Up</a>
+          </li>
+          <li>
+            <a href="#"></a>
+          </li>
+        </ul>
+        <h3 class="text-muted">SafeRide</h3>
+      </div>
+      <div class="jumbotron">
+        <h2>Pick Up</h2>
+        <p class="lead">I am currently located at...</p>
+        
+<%= form_for :rides, url: rides_path do |f| %>
+
+<select class="form-control">
+          <option>IT Center (Rush Rhees Library)</option>
+          <option>Carlson Library</option>
+          <option>Todd Union</option>
+          <option>Hill Court</option>
+          <option>Southside</option>
+          <option>Riverview Apartments</option>
+        </select>
+        <p style>And please drop me off at...</p>
+        <select class="form-control">
+          <option>Riverview Apartments</option>
+          <option>IT Center (Rush Rhees Library)</option>
+          <option>Carlson Library</option>
+          <option>Todd Union</option>
+          <option>Hill Court</option>
+          <option>Southside</option>
+        </select><br>
+        <p>In addition to myself, please also pick up:</p>
+        <div class="btn-group btn-group-lg" align="right">
+          <a class="btn btn-default" data-toggle="dropdown" href="#"># of Passengers</a><a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">    <span class="caret"></span>  </a>
+          <ul class="dropdown-menu" class="form-control">
+            <li>
+              <a href="#">+1 Passenger</a>
+            </li>
+            <li>
+              <a href="#">+2 Passengers</a>
+            </li>
+            <li><a href="#">+3 Passengers</a>
+            </li>
+          </ul>
+        </div><br><br>
+        <p>Additional information:</p>
+        <i>Use the below area to provide any additional information you may find beneficial to your driver (e.g. "Standing near Kendrick trash can at Hill Court.") or any alternative methods of contact.</i><br><br>
+        <!-- <b>Hours of Operation:</b> 11:00 p.m. – 4:00 a.m. everyday during the academic year (no breaks or University holidays)<br><b>River Campus Locations:</b> IT Center (Rush Rhees Library), Carlson Library, Todd Union<b>Residential Locations:</b> Hill Court, Southside, Riverview Apartments<br>You can be picked up and dropped off at any of the six locations.</p>        -->
+        <textarea class="form-control"></textarea><br>
+        <p><a class="btn btn-success btn-lg" href="success.html">Ready - Pick Me Up</a></p>
+      </div>
+      <div class="footer">
+        <p>&copy; DMS371: Capstone</p>
+      </div>
+    </div>
+    <!-- /container -->
+  </body>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  Present: MyString
+  Dropoff: MyString
+  Passengers: MyString
+
+two:
+  name: MyString
+  Present: MyString
+  Dropoff: MyString
+  Passengers: MyString

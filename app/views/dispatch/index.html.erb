@@ -1,0 +1,98 @@
+
+    <head>
+        <title>Safe Ride Digital</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.0.0/amelia/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        
+<script>
+    (function ($) {
+          $(document).ready(function() {
+          $("#show-example").click(function () {
+             if ($('#example').is(":visible")) {
+                 $(this).html($(this).html().replace(/Hide/, 'Show'));
+             } else {
+                 $(this).html($(this).html().replace(/Show/, 'Hide'));
+             }
+             // Do it afterwards as the operation is async
+             $("#example").slideToggle("slow");
+          });
+      });
+  })(jQuery);
+</script>
+            <body>
+        <div class="container" style="padding:4%;">
+
+        <h1>Hello, dispatcher!</h1>
+
+        <h4>Below is a listing of incoming rider requests, sorted from oldest to newest.
+<b><span id="clockbox"></span></b>.
+
+        <!-- <br><br>This page will be refreshed every minute.
+      Dispatchers (or individuals with access to this page) can view the comments for these requests and delete them if the caller requests a cancellation by phone.
+
+        <br><br>To view requests by date: -->
+
+<br><br>
+
+        Did someone just call? <a id="show-example" onclick="false">Insert the data manually.</a>
+
+</h4>
+
+<div id="example" style="display: none"> 
+<h3>
+
+<strong>Student's name:</strong> <br>
+
+<strong>Pick up location:</strong> <br>
+
+<strong>Drop off location:</strong> <br>
+
+<strong>Number of Passengers:</strong> <br>
+
+</h3>
+</div>
+
+<br>
+<table class="table table-striped table-hover" style="font-family: helvetica;">
+<tr>
+<th>Time Stamp</th>
+
+<th>Name</th>
+
+<th>Passengers</th>
+
+<th>Pick Up</th>
+
+<th>Confirmation</th>
+
+<th>Drop Off</th>
+
+<th>Confirmation</th>
+
+<th colspan="3"></th>
+</tr>
+
+<% @rides.each do |ride| %>
+<td><%= ride.created_at %> </td>
+<td><%= ride.name %></td>
+<td><%= ride.Passengers %></td>
+<td><%= ride.Present %></td>
+<td> - </td>
+<td><%= ride.Dropoff %></td>
+<td> - </td>
+
+<td><%= link_to 'Delete', ride_path(ride), method: :delete, data: { confirm: 'Are you sure you would like to delete this request?' } %> </td>
+
+<!-- <td> link_to 'Edit', edit_ride_path(rides) %></td> --> 
+
+</tr>
+
+<% end %>
+
+</table>
+
+</div>
+</body>
