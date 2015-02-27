@@ -105,7 +105,7 @@
       }
     </style>
 
-  <script>
+<!--  <script>
   $(function() {
     var availableTags = [
       "ITS",
@@ -133,7 +133,7 @@
       source: availableTags
     });
   });
-  </script>
+  </script> -->
 
    <script>
   $(function() {
@@ -158,6 +158,7 @@
       "Valentine",
       "Dekiewiet",
       "Maisonettes",
+      "Carlson Lot"
     ];
     $( "#dropoffs" ).autocomplete({
       source: availableTags
@@ -173,13 +174,10 @@ var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhou
 else if(nhour<12){ap=" AM";}
 else if(nhour==12){ap=" PM";}
 else if(nhour>12){ap=" PM";nhour-=12;}
-
 if(nyear<1000) nyear+=1900;
 if(nmin<=9) nmin="0"+nmin;
-
 document.getElementById('clockbox').innerHTML=""+(nmonth+1)+"/"+ndate+"/"+nyear+" "+nhour+":"+nmin+ap+"";
 }
-
 window.onload=function(){
 GetClock();
 setInterval(GetClock,1000);
@@ -201,38 +199,7 @@ setInterval(GetClock,1000);
             <div class="jumbotron">
                 <h3>Safe Ride Request</b></h3>
 
-<%= form_for :rides, url: rides_path do |f| %>
-  <p>Your full name:</p>
-   <!-- <%= f.label :Name %><br> -->
-   <%= f.text_field :name, { class: "text_field" } %>
-  </p>
-
-<div>
-  <p>I'm currently located at... </p>
-  <input id="pickups" class="text_field">
-</div>
-
-<br>
-
-
-<div>
-  <p>Please drop me off at... </p>
-  <input id="dropoffs" class="text_field">
-</div>
-
-<br>
-<p>Any other passengers tagging along? </p>
-<%= f.select :Passengers, [["Just me"],["+1 Passenger"], ["+2 Passengers"]], { label: "In addition to myself, also pick up: "}, { class: "selectpicker"} %>
-<br><br>
-<p>Do you have any comments?</p>
-  <%= f.text_field :comments, { class: "text_field"} %>
-
-<br><br>
-  <p>
-    <%= f.submit :Submit! %>
-  </p>
-<% end %>
-
+<%= render 'form' %>
 <!--
 <form>
 
@@ -291,7 +258,7 @@ setInterval(GetClock,1000);
 -->
    </div>
             <div class="footer">
-                <p>&copy; DMS372/373 Capstone</p>
+                <p>&copy; DMS | Capstone</p>
             </div>
         </div><!-- /container -->
     </body>

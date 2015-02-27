@@ -7,6 +7,8 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         
+
+
 <script>
     (function ($) {
           $(document).ready(function() {
@@ -37,19 +39,7 @@
 	});
 })(jQuery);
 </script>
-
-<script>
-function jswait()
-{
-	setTimeout(js_go(), 3000);
-}
-function js_go{
-window.location="http://www.safe-ride-digital.herokuapp.com/rides/new";
-}
-</script>
-
-
-<style type="text/css">
+    <style type="text/css">
             /* Space out content a bit */
             body {
                 padding-top: 20px;
@@ -65,13 +55,12 @@ window.location="http://www.safe-ride-digital.herokuapp.com/rides/new";
                 border-bottom: 1px solid #e5e5e5;
             }
 
-  h2, h3 {
-font-family: helvetica neue;
-}
-
- h4{
-font-size: 14px;
-}
+            h2, h3 {
+            font-family: helvetica neue;
+            }
+            h4{
+            font-size: 14px;
+            }
             /* Make the masthead heading the same height as the navigation */
             .header h3 {
                 margin-top: 0;
@@ -137,7 +126,7 @@ font-size: 14px;
                         <a href="#">Welcome</a>
                     </li> -->
                     <li>
-			<%= link_to 'Dispatch', controller: 'dispatch' %>
+			         <%= link_to 'Dispatch', controller: 'dispatch' %>
                         <!-- <a href="dispatch#index">Dispatch</a> -->
                     </li>
             
@@ -147,27 +136,32 @@ font-size: 14px;
             </div>
             <div class="jumbotron">
                 <h3>Welcome to <b>Safe Ride Digital!</b></h3>
-                <p class="lead"><i>Safe Ride Digital</i> is an online portal to request after-hours transportation from River Campus properties and residences.</p>
+                <p class="lead">Safe Ride Digital is an online portal to request after-hours transportation from River Campus properties and residences.</p>
 
-<a id="show-example" onclick="false">I'm new to Safe Ride. May I have more information?</a>
+                <a id="show-example" onclick="false">I'm new to Safe Ride. May I have more information?</a>
 
-<div id="example" style="display: none"> 
-<h4>SafeRide is made possible by the SA Government and UR Security Service. This portal exists as a separate medium to allow students to request pick-ups via their smartphone or laptop (or any device with a Wi-Fi connection). Any difficulties or technicalities that may arise remain independent of the previously mentioned entities.<br><br>
-                <b>Hours of Operation:</b> 11:00 p.m. – 4:00 a.m. everyday during the academic year (no breaks or University holidays)<br>
+            <div id="example" style="display: none"> 
+                <h4>
+                The Safe Ride service is made possible by the Students' Association and UR Public Security. Safe Ride Digital allows UR undergraduates to request pick-ups via any device with online connectivity. Any difficulties or technicalities that arise are independent of the previously mentioned entities.<br><br>
+                
+                <b>Hours of Operation:</b> 11:00 p.m. – 4:00 a.m. everyday during the academic year <br>
+                Note: Safe Ride does not operate during breaks or University holidays.<br><br>
+                
                 <b>River Campus Locations:</b> IT Center (Rush Rhees Library), Carlson Library, Todd Union<b>
- <br>Residential Locations:</b> Hill Court, Southside, Riverview Apartments<br>
-</h4>
- </div> 
-                <p></p>
-                <p>
-<a id="show-example2" onclick="false" onclick="js_wait(); return false;">I'm ready to request a ride!</a>
+            
+                <br>Residential Locations:</b> Hill Court, Southside, Riverview Apartments<br>
+                </h4>
+            </div> 
+            <p></p>
+            <p>
+            <a id="show-example2" onclick="false" onclick="js_wait(); return false;">I'm ready to request a ride!</a>
 
 
-<div id="example2" style="display:none">
-        <h3>Only University of Rochester undergraduates may use this service. You will be redirected to sign in momentarily.</h3>
+            <div id="example2" style="display:none">
+            <h3>Only University of Rochester undergraduates may use this service. You will be redirected to sign in momentarily.</h3>
 <!-- Please sign in with your NetID and password so that we may verify this -->
 
-      </center>
+            </center>
 
       <!-- 
 
@@ -187,9 +181,9 @@ font-size: 14px;
 <a class="btn btn-block btn-link btn-lg" href="rides/new">Let's request a ride!</a></p>
       -->   </div>
 
-   </div>
+            </div>
             <div class="footer">
-                <p>&copy; DMS372/373 Capstone</p>
+                <p>&copy; DMS | Capstone</p>
             </div>
         </div><!-- /container -->
     </body>

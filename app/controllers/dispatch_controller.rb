@@ -1,33 +1,33 @@
 class DispatchController < ApplicationController
 
 def index
-	@rides = Rides.all
+	@rides = Ride.all
+	@ride = Ride.new
 end
 
 def edit
-	@rides = Rides.find(params[:id])
+	@ride = Ride.find(params[:id])
 end
 
 def destroy
-	@rides = Rides.find(params[:id])
-	@rides.destroy
-	redirect_to rides_path
+	@ride = Ride.find(params[:id])
+	@ride.destroy
+	redirect_to @dispatch
 end
 
 def update
-	@rides = Rides.find(params[:id])
+	@ride = Ride.find(params[:id])
 	
-	if @rides.update(rides_params)
+	if @ride.update(rides_params)
 	redirect_to @dispatch
 	else
 	render 'edit'
 	end
 end
 
-public #should be private?
+private
 def rides_params
-	params.require(:rides).permit(:name, :Present, :Dropoff, :Passengers)
-
+	params.require(:ride).permit(:name, :pickup, :dropoff, :passenger_count, :comments)
 end
 
 end

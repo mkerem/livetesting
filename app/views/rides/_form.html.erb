@@ -1,0 +1,32 @@
+<%= form_for @ride do |f| %>
+   <%= f.label :name, "Your full name" %><br>
+   <%= f.text_field :name, class: "text_field" %>
+
+
+<div>
+  <p>I'm currently located at... </p>
+  <!-- <input id="pickups" class="text_field"> -->
+  <%= f.select :pickup, Location.all.order(:name).map{|l| [l.name, l.id]}, class: "selectpicker" %>
+</div>
+
+<br>
+
+
+<div>
+  <p>Please drop me off at... </p>
+  <%= f.select :dropoff, Location.all.order(:name).map{|l| [l.name, l.id]}, class: "selectpicker" %>
+</div>
+
+<br>
+<p>Any other passengers tagging along? </p>
+<%= f.select :passenger_count, [["Just me", 1],["+1 Passenger", 2], ["+2 Passengers", 3]], class: "selectpicker" %>
+<br><br>
+<p>Do you have any comments?</p>
+
+  <%= f.text_area :comments, class: "text_field" %>
+
+<br><br>
+  <p>
+    <%= f.submit :Submit! %>
+  </p>
+<% end %>

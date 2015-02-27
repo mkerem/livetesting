@@ -11,13 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206033533) do
+ActiveRecord::Schema.define(version: 20150227163628) do
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rides", force: true do |t|
     t.string   "name"
-    t.string   "Present"
-    t.string   "Dropoff"
-    t.string   "Passengers"
+    t.integer  "pickup"
+    t.integer  "dropoff"
+    t.integer  "passenger_count"
+    t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -12,7 +12,7 @@ get '/rides/:id/edit(.:format)' => 'dispatch#edit'
 
 root 'welcome#index' 
 
-get 'dispatch/index'
+get 'dispatch/index', :as => 'dispatch'
 
 #get 'rides(.:format)' => 'dispatch#index'
 

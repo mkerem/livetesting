@@ -27,16 +27,18 @@
 
         <h1>Hello, dispatcher!</h1>
 
-        <h4>Below is a listing of incoming rider requests, sorted from oldest to newest.
-<b><span id="clockbox"></span></b>.
+        <h4>Below is a listing of incoming rider requests for the current shift. <br><br>
 
-        <!-- <br><br>This page will be refreshed every minute.
-      Dispatchers (or individuals with access to this page) can view the comments for these requests and delete them if the caller requests a cancellation by phone.
+        <b>Please note that...</b><br>
+        <ul>
+        <li>This page auto-refreshes every minute.</li>
+        <li>When needed, you may edit and/or delete a request.</li>
+        <li>Riders may see where they are in queue.</li>
+        </ul>
 
-        <br><br>To view requests by date: -->
+        <br><b>View requests by date:</b> {coming soon}
 
-<br><br>
-
+        <br><br>
         Did someone just call? <a id="show-example" onclick="false">Insert the data manually.</a>
 
 </h4>
@@ -44,6 +46,7 @@
 <div id="example" style="display: none"> 
 <h3>
 
+<!--
 <strong>Student's name:</strong> <br>
 
 <strong>Pick up location:</strong> <br>
@@ -51,6 +54,9 @@
 <strong>Drop off location:</strong> <br>
 
 <strong>Number of Passengers:</strong> <br>
+-->
+
+<%= render 'rides/form' %>
 
 </h3>
 </div>
@@ -58,6 +64,9 @@
 <br>
 <table class="table table-striped table-hover" style="font-family: helvetica;">
 <tr>
+
+<th>Queue</th>
+
 <th>Time Stamp</th>
 
 <th>Name</th>
@@ -72,21 +81,24 @@
 
 <th>Confirmation</th>
 
+<th>Rider Comments</th>
+
 <th colspan="3"></th>
 </tr>
 
 <% @rides.each do |ride| %>
+<td># </td>
 <td><%= ride.created_at %> </td>
 <td><%= ride.name %></td>
-<td><%= ride.Passengers %></td>
-<td><%= ride.Present %></td>
+<td><%= ride.passenger_count %></td>
+<td><%= ride.pickup.try(:name) %></td>
 <td> - </td>
-<td><%= ride.Dropoff %></td>
+<td><%= ride.dropoff.try(:name) %></td>
+<td> - </td>
 <td> - </td>
 
+<td> <%= link_to 'Edit' %> </td>
 <td><%= link_to 'Delete', ride_path(ride), method: :delete, data: { confirm: 'Are you sure you would like to delete this request?' } %> </td>
-
-<!-- <td> link_to 'Edit', edit_ride_path(rides) %></td> --> 
 
 </tr>
 

@@ -2,14 +2,6 @@
 
 one:
   name: MyString
-  pickup: 1
-  dropoff: 1
-  passenger_count: 1
-  comments: MyText
 
 two:
   name: MyString
-  pickup: 1
-  dropoff: 1
-  passenger_count: 1
-  comments: MyText
