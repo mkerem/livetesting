@@ -6,7 +6,7 @@
 <div>
   <p>I'm currently located at... </p>
   <!-- <input id="pickups" class="text_field"> -->
-  <%= f.select :pickup, Location.all.order(:name).map{|l| [l.name, l.id]}, class: "selectpicker" %>
+  <%= f.select :pickup_location_id, Location.all.order(:name).map{|l| [l.name, l.id]}, class: "selectpicker" %>
 </div>
 
 <br>
@@ -14,7 +14,7 @@
 
 <div>
   <p>Please drop me off at... </p>
-  <%= f.select :dropoff, Location.all.order(:name).map{|l| [l.name, l.id]}, class: "selectpicker" %>
+  <%= f.select :dropoff_location_id, Location.all.order(:name).map{|l| [l.name, l.id]}, class: "selectpicker" %>
 </div>
 
 <br>

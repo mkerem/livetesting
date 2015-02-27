@@ -127,10 +127,10 @@ Thanks for using Safe Ride Digital!<br>
   <%= @ride.name %>
 <br>
 <strong>Pick up: </strong>
-<%= @ride.pickup %>
+<%= @ride.pickup.try(:name) %>
 <br>
 <strong>Drop off: </strong>
-<%= @ride.dropoff %>
+<%= @ride.dropoff.try(:name) %>
 <br>
 <strong>Passengers: </strong>
 <%= @ride.passenger_count %>
