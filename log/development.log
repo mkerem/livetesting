@@ -34759,3 +34759,1650 @@ Processing by DispatchController#index as HTML
   [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
   Rendered dispatch/index.html.erb within layouts/application (13.5ms)
 Completed 200 OK in 141ms (Views: 139.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:19:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (15.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.8) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.8) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.8) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/mkerem/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/mkerem/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/mkerem/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/mkerem/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/mkerem/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/mkerem/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mkerem/.rvm/gems/ruby-2.2.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (88.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (16.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameLocationColumnsInRides (20150227214631)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (21.0ms)[0m  [1mCREATE TEMPORARY TABLE "arides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pickup_location_id" integer, "dropoff" integer, "passenger_count" integer, "comments" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.5ms)[0m  SELECT * FROM "rides"
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "arides" ("id","name","pickup_location_id","dropoff","passenger_count","comments","created_at","updated_at") VALUES (1, 'Test test', 3, 1, 2, 'this is a comment', '2015-02-27 16:32:48.597039', '2015-02-27 16:46:04.114446')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "arides" ("id","name","pickup_location_id","dropoff","passenger_count","comments","created_at","updated_at") VALUES (2, NULL, NULL, NULL, NULL, NULL, '2015-02-27 17:04:04.501214', '2015-02-27 17:04:04.501214')
+  [1m[36m (23.4ms)[0m  [1mDROP TABLE "rides"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pickup_location_id" integer, "dropoff" integer, "passenger_count" integer, "comments" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "arides"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "rides" ("id","name","pickup_location_id","dropoff","passenger_count","comments","created_at","updated_at") VALUES (1, 'Test test', 3, 1, 2, 'this is a comment', '2015-02-27 16:32:48.597039', '2015-02-27 16:46:04.114446')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "rides" ("id","name","pickup_location_id","dropoff","passenger_count","comments","created_at","updated_at") VALUES (2, NULL, NULL, NULL, NULL, NULL, '2015-02-27 17:04:04.501214', '2015-02-27 17:04:04.501214')[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "arides"
+  [1m[36m (0.3ms)[0m  [1mCREATE TEMPORARY TABLE "arides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pickup_location_id" integer, "dropoff_location_id" integer, "passenger_count" integer, "comments" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "rides"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "arides" ("id","name","pickup_location_id","dropoff_location_id","passenger_count","comments","created_at","updated_at") VALUES (1, 'Test test', 3, 1, 2, 'this is a comment', '2015-02-27 16:32:48.597039', '2015-02-27 16:46:04.114446')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "arides" ("id","name","pickup_location_id","dropoff_location_id","passenger_count","comments","created_at","updated_at") VALUES (2, NULL, NULL, NULL, NULL, NULL, '2015-02-27 17:04:04.501214', '2015-02-27 17:04:04.501214')
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "rides"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "rides" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "pickup_location_id" integer, "dropoff_location_id" integer, "passenger_count" integer, "comments" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "arides"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "rides" ("id","name","pickup_location_id","dropoff_location_id","passenger_count","comments","created_at","updated_at") VALUES (1, 'Test test', 3, 1, 2, 'this is a comment', '2015-02-27 16:32:48.597039', '2015-02-27 16:46:04.114446')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "rides" ("id","name","pickup_location_id","dropoff_location_id","passenger_count","comments","created_at","updated_at") VALUES (2, NULL, NULL, NULL, NULL, NULL, '2015-02-27 17:04:04.501214', '2015-02-27 17:04:04.501214')[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "arides"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150227214631"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:21:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DispatchController#index as HTML
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (39.7ms)
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered dispatch/index.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 494ms (Views: 428.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:33 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-27 17:21:39 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 117ms (Views: 116.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:40 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 17:21:49 -0500
+Processing by RidesController#new as HTML
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (5.0ms)
+  Rendered rides/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 141ms (Views: 139.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:21:50 -0500
+
+
+Started POST "/rides" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+Processing by RidesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Obnds6khuZusTq84fQfB/TDk0Hh+C1Ed6ldFSasUlEg=", "ride"=>{"name"=>"Michaela", "pickup_location_id"=>"1", "dropoff_location_id"=>"1", "passenger_count"=>"2", "comments"=>"None!"}, "commit"=>"Submit!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "rides" ("comments", "created_at", "dropoff_location_id", "name", "passenger_count", "pickup_location_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["comments", "None!"], ["created_at", "2015-02-27 22:22:07.231237"], ["dropoff_location_id", 1], ["name", "Michaela"], ["passenger_count", 2], ["pickup_location_id", 1], ["updated_at", "2015-02-27 22:22:07.231237"]]
+  [1m[36m (58.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rides/3
+Completed 302 Found in 66ms (ActiveRecord: 59.2ms)
+
+
+Started GET "/rides/3" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+Processing by RidesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRide Load (0.2ms)[0m  SELECT  "rides".* FROM "rides"  WHERE "rides"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered rides/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 138ms (Views: 136.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:07 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 17:22:22 -0500
+Processing by RidesController#new as HTML
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (3.1ms)
+  Rendered rides/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 102ms (Views: 101.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/rides" for 127.0.0.1 at 2015-02-27 17:22:30 -0500
+Processing by RidesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Obnds6khuZusTq84fQfB/TDk0Hh+C1Ed6ldFSasUlEg=", "ride"=>{"name"=>"Michaela", "pickup_location_id"=>"1", "dropoff_location_id"=>"4", "passenger_count"=>"2", "comments"=>"Nope, sorry :)"}, "commit"=>"Submit!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "rides" ("comments", "created_at", "dropoff_location_id", "name", "passenger_count", "pickup_location_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["comments", "Nope, sorry :)"], ["created_at", "2015-02-27 22:22:30.867991"], ["dropoff_location_id", 4], ["name", "Michaela"], ["passenger_count", 2], ["pickup_location_id", 1], ["updated_at", "2015-02-27 22:22:30.867991"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rides/4
+Completed 302 Found in 9ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/rides/4" for 127.0.0.1 at 2015-02-27 17:22:30 -0500
+Processing by RidesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mRide Load (0.3ms)[0m  SELECT  "rides".* FROM "rides"  WHERE "rides"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered rides/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 92ms (Views: 89.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:31 -0500
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+Processing by DispatchController#index as HTML
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (6.0ms)
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered dispatch/index.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 207ms (Views: 205.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:36 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:37 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:37 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:22:37 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-27 17:27:07 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 180ms (Views: 178.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:08 -0500
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:27:17 -0500
+Processing by DispatchController#index as HTML
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (5.7ms)
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered dispatch/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 131ms (Views: 129.0ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/rides/2" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+Processing by RidesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Obnds6khuZusTq84fQfB/TDk0Hh+C1Ed6ldFSasUlEg=", "id"=>"2"}
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT  "rides".* FROM "rides"  WHERE "rides"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (33.4ms)[0m  [1mDELETE FROM "rides" WHERE "rides"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/dispatch/index
+Completed 302 Found in 38ms (ActiveRecord: 34.8ms)
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+Processing by DispatchController#index as HTML
+  [1m[36mLocation Load (0.5ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (6.1ms)
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered dispatch/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 116ms (Views: 113.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:30 -0500
+
+
+Started DELETE "/rides/3" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+Processing by RidesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Obnds6khuZusTq84fQfB/TDk0Hh+C1Ed6ldFSasUlEg=", "id"=>"3"}
+  [1m[35mRide Load (0.1ms)[0m  SELECT  "rides".* FROM "rides"  WHERE "rides"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "rides" WHERE "rides"."id" = ?  [["id", 3]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dispatch/index
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+Processing by DispatchController#index as HTML
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (4.5ms)
+  [1m[35mRide Load (0.5ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered dispatch/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 132ms (Views: 130.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:40 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 160ms (Views: 159.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:27:57 -0500
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:28:14 -0500
+Processing by DispatchController#index as HTML
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (3.4ms)
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered dispatch/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 122ms (Views: 120.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+Processing by DispatchController#index as HTML
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (23.1ms)
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered dispatch/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 204ms (Views: 202.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:35:57 -0500
+
+
+Started POST "/rides" for 127.0.0.1 at 2015-02-27 17:36:32 -0500
+Processing by RidesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Obnds6khuZusTq84fQfB/TDk0Hh+C1Ed6ldFSasUlEg=", "ride"=>{"name"=>"Jake", "pickup_location_id"=>"1", "dropoff_location_id"=>"3", "passenger_count"=>"2", "comments"=>"By the doorstep"}, "commit"=>"Submit!"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (19.4ms)[0m  INSERT INTO "rides" ("comments", "created_at", "dropoff_location_id", "name", "passenger_count", "pickup_location_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["comments", "By the doorstep"], ["created_at", "2015-02-27 22:36:32.998995"], ["dropoff_location_id", 3], ["name", "Jake"], ["passenger_count", 2], ["pickup_location_id", 1], ["updated_at", "2015-02-27 22:36:32.998995"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/rides/5
+Completed 302 Found in 27ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/rides/5" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+Processing by RidesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mRide Load (0.2ms)[0m  SELECT  "rides".* FROM "rides"  WHERE "rides"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered rides/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 316ms (Views: 313.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:33 -0500
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+Processing by DispatchController#index as HTML
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (5.9ms)
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered dispatch/index.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 260ms (Views: 257.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 17:36:48 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-27 18:11:05 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 513ms (Views: 466.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 18:11:06 -0500
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 18:30:49 -0500
+Processing by DispatchController#index as HTML
+  [1m[35mLocation Load (49.4ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (75.5ms)
+  [1m[35mRide Load (0.6ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mLocation Load (0.2ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocation Load (0.3ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered dispatch/index.html.erb within layouts/application (236.9ms)
+Completed 200 OK in 528ms (Views: 460.5ms | ActiveRecord: 50.9ms)
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 18:48:15 -0500
+Processing by DispatchController#index as HTML
+  [1m[36mLocation Load (1.1ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (16.8ms)
+  [1m[36mRide Load (0.4ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35mLocation Load (0.3ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered dispatch/index.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 369ms (Views: 357.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 18:48:16 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:05:53 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (1.5ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (33.8ms)
+  Rendered rides/new.html.erb within layouts/application (54.2ms)
+Completed 200 OK in 611ms (Views: 599.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:05:55 -0500
+
+
+Started POST "/rides" for 127.0.0.1 at 2015-02-27 19:06:10 -0500
+Processing by RidesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Obnds6khuZusTq84fQfB/TDk0Hh+C1Ed6ldFSasUlEg=", "ride"=>{"name"=>"testing3", "pickup_location_id"=>"1", "dropoff_location_id"=>"1", "passenger_count"=>"1", "comments"=>"will \"just me\" say 1?"}, "commit"=>"Submit!"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (85.5ms)[0m  [1mINSERT INTO "rides" ("comments", "created_at", "dropoff_location_id", "name", "passenger_count", "pickup_location_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["comments", "will \"just me\" say 1?"], ["created_at", "2015-02-28 00:06:10.550202"], ["dropoff_location_id", 1], ["name", "testing3"], ["passenger_count", 1], ["pickup_location_id", 1], ["updated_at", "2015-02-28 00:06:10.550202"]]
+  [1m[35m (244.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/rides/6
+Completed 302 Found in 411ms (ActiveRecord: 330.4ms)
+
+
+Started GET "/rides/6" for 127.0.0.1 at 2015-02-27 19:06:10 -0500
+Processing by RidesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRide Load (0.1ms)[0m  [1mSELECT  "rides".* FROM "rides"  WHERE "rides"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered rides/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 599ms (Views: 596.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:11 -0500
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+Processing by DispatchController#index as HTML
+  [1m[35mLocation Load (0.4ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (7.0ms)
+  [1m[35mRide Load (0.2ms)[0m  SELECT "rides".* FROM "rides"
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered dispatch/index.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 176ms (Views: 174.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:18 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-27 19:06:40 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 173ms (Views: 172.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:06:41 -0500
+
+
+Started GET "/dispatch/index" for 127.0.0.1 at 2015-02-27 19:06:46 -0500
+Processing by DispatchController#index as HTML
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  Rendered rides/_form.html.erb (6.2ms)
+  [1m[36mRide Load (0.2ms)[0m  [1mSELECT "rides".* FROM "rides"[0m
+  [1m[35mLocation Load (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "locations".* FROM "locations"  WHERE "locations"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered dispatch/index.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 143ms (Views: 141.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-27 19:15:49 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 632ms (Views: 627.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:15:50 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:15:50 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:15:50 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:15:50 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:15:50 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:15:50 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:15:51 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:15:53 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (0.5ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (13.5ms)
+  Rendered rides/new.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 212ms (Views: 208.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:16:14 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (0.3ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (4.7ms)
+  Rendered rides/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 168ms (Views: 167.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:16:22 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (0.2ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (3.6ms)
+  Rendered rides/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 112ms (Views: 110.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:16:23 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:26:25 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (1.1ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (21.0ms)
+  Rendered rides/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 326ms (Views: 316.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:26 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:26:36 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (0.3ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (5.0ms)
+  Rendered rides/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 146ms (Views: 145.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:37 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (0.3ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (8.5ms)
+  Rendered rides/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 120ms (Views: 118.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:26:45 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (0.5ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (17.1ms)
+  Rendered rides/new.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 242ms (Views: 240.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:28:03 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:29:32 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (17.1ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (25.9ms)
+  Rendered rides/new.html.erb within layouts/application (44.3ms)
+Completed 200 OK in 308ms (Views: 289.7ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:29:33 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-27 19:44:36 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 391ms (Views: 382.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/requests.css?body=1" for 127.0.0.1 at 2015-02-27 19:44:37 -0500
+
+
+Started GET "/assets/dispatch.css?body=1" for 127.0.0.1 at 2015-02-27 19:44:37 -0500
+
+
+Started GET "/assets/rides.css?body=1" for 127.0.0.1 at 2015-02-27 19:44:37 -0500
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2015-02-27 19:44:37 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-27 19:44:37 -0500
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2015-02-27 19:44:37 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/assets/dispatch.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/assets/requests.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/assets/rides.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2015-02-27 19:44:38 -0500
+
+
+Started GET "/rides/new" for 127.0.0.1 at 2015-02-27 19:44:39 -0500
+Processing by RidesController#new as HTML
+  [1m[35mLocation Load (26.0ms)[0m  SELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"   ORDER BY "locations"."name" ASC[0m
+  Rendered rides/_form.html.erb (33.5ms)
+  Rendered rides/new.html.erb within layouts/application (71.3ms)
+Completed 200 OK in 204ms (Views: 177.6ms | ActiveRecord: 26.1ms)

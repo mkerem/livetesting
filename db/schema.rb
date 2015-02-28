@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227163628) do
+ActiveRecord::Schema.define(version: 20150227214631) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20150227163628) do
 
   create_table "rides", force: true do |t|
     t.string   "name"
-    t.integer  "pickup"
-    t.integer  "dropoff"
+    t.integer  "pickup_location_id"
+    t.integer  "dropoff_location_id"
     t.integer  "passenger_count"
     t.text     "comments"
     t.datetime "created_at"

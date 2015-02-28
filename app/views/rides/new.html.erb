@@ -1,17 +1,14 @@
+<head>
+  <title>Safe Ride Digital</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-    <head>
-        <title>Safe Ride Digital</title>
-        <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   
-
     <style type="text/css">
       /* Space out content a bit */
       body {
@@ -105,35 +102,7 @@
       }
     </style>
 
-<!--  <script>
-  $(function() {
-    var availableTags = [
-      "ITS",
-      "Riverview A",
-      "Riverview B",
-      "Riverview C",
-      "Riverview D",
-      "Riverview E",
-      "Todd Union",
-      "Brooks Crossing",
-      "Medical Center",
-      "Laser Lab",
-      "Chambers",
-      "Fairchild",
-      "Gale",
-      "Kendrick",
-      "Munro",
-      "Slater",
-      "Jackson Court",
-      "Valentine",
-      "Dekiewiet",
-      "Maisonettes",
-    ];
-    $( "#pickups" ).autocomplete({
-      source: availableTags
-    });
-  });
-  </script> -->
+<!--  useless script
 
    <script>
   $(function() {
@@ -165,22 +134,23 @@
     });
   });
   </script>
+-->
 
 <script type="text/javascript">
-function GetClock(){
-var d=new Date();
-var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),ap;
-     if(nhour==0){ap=" AM";nhour=12;}
-else if(nhour<12){ap=" AM";}
-else if(nhour==12){ap=" PM";}
-else if(nhour>12){ap=" PM";nhour-=12;}
-if(nyear<1000) nyear+=1900;
-if(nmin<=9) nmin="0"+nmin;
-document.getElementById('clockbox').innerHTML=""+(nmonth+1)+"/"+ndate+"/"+nyear+" "+nhour+":"+nmin+ap+"";
-}
-window.onload=function(){
-GetClock();
-setInterval(GetClock,1000);
+    function GetClock(){
+    var d=new Date();
+    var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),ap;
+         if(nhour==0){ap=" AM";nhour=12;}
+    else if(nhour<12){ap=" AM";}
+    else if(nhour==12){ap=" PM";}
+    else if(nhour>12){ap=" PM";nhour-=12;}
+    if(nyear<1000) nyear+=1900;
+    if(nmin<=9) nmin="0"+nmin;
+    document.getElementById('clockbox').innerHTML=""+(nmonth+1)+"/"+ndate+"/"+nyear+" "+nhour+":"+nmin+ap+"";
+    }
+    window.onload=function(){
+    GetClock();
+    setInterval(GetClock,1000);
 }
 </script>
 
@@ -197,25 +167,11 @@ setInterval(GetClock,1000);
                 <h2 class="text-muted">Safe Ride Digital</h2>
             </div>
             <div class="jumbotron">
-                <h3>Safe Ride Request</b></h3>
+                <h3>Ride Request</b></h3>
 
 <%= render 'form' %>
-<!--
-<form>
 
-
-        <li class="input select optional" id="gem_awesomeness_input">
-          <label class="label" for="gem_awesomeness">Pick me up from...</label>
-<select id="gem_awesomeness" name="gem[awesomeness]">
-
-          <option value="1">IT Center (Rush Rhees Library)</option>
-          <option value="2">Carlson Library</option>
-          <option value="3">Todd Union</option>
-          <option value="4">Hill Court</option>
-          <option value="5">Southside</option>
-          <option value="6">Riverview Apartments</option>
-
-          </li>
+<!-- Useless HTML no one needs
 
         <li class="input select optional" id="gem_awesomeness_input">
           <label class="label" for="gem_awesomeness">Pick me up from...</label>
@@ -229,25 +185,6 @@ setInterval(GetClock,1000);
           <option value="6">Riverview Apartments</option>
 
           </li>
-
-
-        <li class="input radio optional">
-          <fieldset class="choices">
-            <label class="label"><label>In addition to myself, please pick up: </label>
-            <ol class="choices-group">
-              <li class="choice">
-                <label><input id="gem_rate_five" name="gem[rate]" type="radio" checked="checked">+1 Passenger</label></label>
-              </li>
-              <li class="choice">
-                <label><input id="gem_rate_four" name="gem[rate]" type="radio">+2 Passengers</label></label>
-              </li>
-              <li class="choice">
-                <label><input id="gem_rate_three" name="gem[rate]" type="radio">+3 Passengers</label></label>
-              </li>
-          </fieldset>
-        </li>
-
-
     <fieldset class="buttons">
       <ol>
         <li class="button commit">
@@ -256,9 +193,9 @@ setInterval(GetClock,1000);
       </ol>
     </fieldset>
 -->
-   </div>
-            <div class="footer">
-                <p>&copy; DMS | Capstone</p>
-            </div>
-        </div><!-- /container -->
-    </body>
+     </div>
+        <div class="footer">
+            <p>&copy; DMS | Capstone</p>
+        </div>
+    </div>
+</body>

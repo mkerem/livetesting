@@ -118,26 +118,28 @@ setInterval(GetClock,1000);
 
 <center><h2>
 
-Thanks for using Safe Ride Digital!<br>
+Thanks for requesting a ride!<br>
 </h2>
 <h3>Below is the information the dispatcher received: <br> <br></h3>
 
-<h3 style = "text-align:left">
-  <strong>Name: </strong>
-  <%= @ride.name %>
-<br>
-<strong>Pick up: </strong>
-<%= @ride.pickup %>
-<br>
-<strong>Drop off: </strong>
-<%= @ride.dropoff %>
-<br>
-<strong>Passengers: </strong>
-<%= @ride.passenger_count %>
-<br>
-<strong>Comments: </strong>
-<%= @ride.comments %>
-<br>
+    <h3 style = "text-align:left">
+      <strong>Name: </strong>
+      <%= @ride.name %>
+    <br>
+    <strong>Pick up: </strong>
+    <%= @ride.pickup.try(:name) %>
+    <br>
+    <strong>Drop off: </strong>
+    <%= @ride.dropoff.try(:name) %>
+    <br>
+    <strong>Passengers: </strong>
+    <%= @ride.passenger_count %>
+    <br>
+    <strong>Comments: </strong>
+    <%= @ride.comments %>
+    <br>
+
+    <b>You will receive a confirmation email shortly.</b>
 </h3>
 <br>
 <h2>You are currently ___ in queue.</h2> 
@@ -150,5 +152,4 @@ Please email us at saferidedigital@googlegroups.com if you have any questions, c
         <p>&copy; DMS | Capstone</p>
       </div>
     </div>
-    <!-- /container -->
   </body>

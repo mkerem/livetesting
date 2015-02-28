@@ -17,7 +17,7 @@ end
 
 def update
 	@ride = Ride.find(params[:id])
-	
+
 	if @ride.update(rides_params)
 	redirect_to @dispatch
 	else
@@ -27,7 +27,7 @@ end
 
 private
 def rides_params
-	params.require(:ride).permit(:name, :pickup, :dropoff, :passenger_count, :comments)
+	params.require(:ride).permit(:name, :pickup_location_id, :dropoff_location_id, :passenger_count, :comments)
 end
 
 end
