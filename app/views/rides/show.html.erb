@@ -122,6 +122,7 @@ Thanks for requesting a ride!<br>
 </h2>
 <h3>Below is the information the dispatcher received: <br> <br></h3>
 
+<<<<<<< HEAD
     <h3 style = "text-align:left">
       <strong>Name: </strong>
       <%= @ride.name %>
@@ -140,6 +141,24 @@ Thanks for requesting a ride!<br>
     <br>
 
     <b>You will receive a confirmation email shortly.</b>
+=======
+<h3 style = "text-align:left">
+  <strong>Name: </strong>
+  <%= @ride.name %>
+<br>
+<strong>Pick up: </strong>
+<%= @ride.pickup.try(:name) %>
+<br>
+<strong>Drop off: </strong>
+<%= @ride.dropoff.try(:name) %>
+<br>
+<strong>Passengers: </strong>
+<%= @ride.passenger_count %>
+<br>
+<strong>Comments: </strong>
+<%= @ride.comments %>
+<br>
+>>>>>>> FETCH_HEAD
 </h3>
 <br>
 <h2>You are currently ___ in queue.</h2> 
