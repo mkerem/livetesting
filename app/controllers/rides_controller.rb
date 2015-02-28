@@ -38,6 +38,16 @@ class RidesController < ApplicationController
 		end
 	end
 
+	def confirm_pickup
+		@ride = Ride.find(params[:ride_id])
+		@ride.confirm_pickup!
+	end
+
+	def confirm_dropoff
+		@ride = Ride.find(params[:ride_id])
+		@ride.confirm_dropoff!
+	end
+
 	private
 	def rides_params
 		params.require(:ride).permit(:name, :pickup_location_id, :dropoff_location_id, :passenger_count, :comments)
