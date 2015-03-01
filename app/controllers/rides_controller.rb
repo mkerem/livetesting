@@ -41,11 +41,15 @@ class RidesController < ApplicationController
 	def confirm_pickup
 		@ride = Ride.find(params[:ride_id])
 		@ride.confirm_pickup!
+
+		@completed_rides = Ride.completed if @ride.confirmed?
 	end
 
 	def confirm_dropoff
 		@ride = Ride.find(params[:ride_id])
 		@ride.confirm_dropoff!
+
+		@completed_rides = Ride.completed if @ride.confirmed?
 	end
 
 	private

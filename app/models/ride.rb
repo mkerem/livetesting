@@ -16,4 +16,8 @@ class Ride < ActiveRecord::Base
 		self.dropoff_confirmed_at = DateTime.current
 		self.save
 	end
+
+	def confirmed?
+		pickup_confirmed && dropoff_confirmed
+	end
 end
