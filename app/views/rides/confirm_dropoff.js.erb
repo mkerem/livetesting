@@ -1,1 +1,6 @@
 $('#dropoff-confirmation-<%= @ride.id %>').html("<%= @ride.dropoff_confirmed_at %>");
+
+<% if @ride.confirmed? %>
+  $('#pickup-confirmation-<%= @ride.id %>').closest("tr").remove();
+  $('#completed-rides').replaceWith("<%= j render 'dispatch/requests_table', rides: @completed_rides %>");
+<% end %>
