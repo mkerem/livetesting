@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
 get 'welcome/index'
  
-resources :rides# do
+resources :rides do
+  put 'confirm_pickup'
+  put 'confirm_dropoff'
+end
 delete '/rides/:id' => 'rides#destroy'
 delete '/dispatch/index(.:format)' => 'rides#destroy'
 get 'rides/.:format' => 'dispatch#index'

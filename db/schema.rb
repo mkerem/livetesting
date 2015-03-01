@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227214631) do
+ActiveRecord::Schema.define(version: 20150228172732) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20150227214631) do
     t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "pickup_confirmed",     default: false
+    t.datetime "pickup_confirmed_at"
+    t.boolean  "dropoff_confirmed",    default: false
+    t.datetime "dropoff_confirmed_at"
   end
 
 end

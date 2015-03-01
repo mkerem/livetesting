@@ -1,7 +1,8 @@
 class DispatchController < ApplicationController
 
 def index
-	@rides = Ride.all
+	@incoming_rides = Ride.not_completed
+	@completed_rides = Ride.completed
 	@ride = Ride.new
 end
 
