@@ -1,13 +1,11 @@
 <table class="table table-striped table-hover" style="font-family: helvetica;">
 <tr>
 
-<th>Queue</th>
-
 <th>Time Stamp</th>
 
 <th>Name</th>
 
-<th>Passengers</th>
+<th>Rider Count</th>
 
 <th>Pick Up</th>
 
@@ -17,13 +15,12 @@
 
 <th>Confirmation</th>
 
-<th>Rider Comments</th>
+<th>Comments</th>
 
 <th colspan="3"></th>
 </tr>
 
 <% rides.each do |ride| %>
-    <td> </td>
     <td><%= ride.created_at %> </td>
     <td><%= ride.name %></td>
     <td><%= ride.passenger_count %></td>
