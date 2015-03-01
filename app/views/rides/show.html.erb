@@ -122,7 +122,6 @@ Thanks for requesting a ride!<br>
 </h2>
 <h3>Below is the information the dispatcher received: <br> <br></h3>
 
-<<<<<<< HEAD
     <h3 style = "text-align:left">
       <strong>Name: </strong>
       <%= @ride.name %>
@@ -139,33 +138,19 @@ Thanks for requesting a ride!<br>
     <strong>Comments: </strong>
     <%= @ride.comments %>
     <br>
+    <br>
 
     <b>You will receive a confirmation email shortly.</b>
-=======
-<h3 style = "text-align:left">
-  <strong>Name: </strong>
-  <%= @ride.name %>
-<br>
-<strong>Pick up: </strong>
-<%= @ride.pickup.try(:name) %>
-<br>
-<strong>Drop off: </strong>
-<%= @ride.dropoff.try(:name) %>
-<br>
-<strong>Passengers: </strong>
-<%= @ride.passenger_count %>
-<br>
-<strong>Comments: </strong>
-<%= @ride.comments %>
-<br>
->>>>>>> FETCH_HEAD
+
 </h3>
 <br>
-<h2>You are currently ___ in queue.</h2> 
+<h2>Based off the number of the requests, your estimated wait time is... <br>
+<b>Between 30 minutes to 1 hour.</h2> 
 </center>
+
+
 <h3>
-Please email us at saferidedigital@googlegroups.com if you have any questions, comments, concerns, or feedback.
-</h3>
+Please email us at saferidedigital@googlegroups.com if you have any questions, comments, concerns, or feedback. If you'd like to cancel your ride, please call the hotline.</h3>
 </div>
       <div class="footer">
         <p>&copy; DMS | Capstone</p>

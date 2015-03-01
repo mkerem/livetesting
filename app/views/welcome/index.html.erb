@@ -23,34 +23,16 @@
       })(jQuery);
     </script>
 
-    <script>
-    (function ($) {
-    	$(document).ready(function() {
-    	$("#show-example2").click(function () {
-    	if ($('#example2').is(":visible")) {
-    	$(this).html($(this).html().replace(/Hide/, 'Show'));
-    	} else {
-    	$(this).html($(this).html().replace(/Show/, 'Hide'));
-    	}
-    	$("#example2").slideToggle("slow");
-    	});
-    	});
-    })(jQuery);
-    </script>
-
     <!-- CSS that does not belong here, sorry -->
     <style type="text/css">
-            /* Space out content a bit */
             body {
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
-            /* Everything but the jumbotron gets side spacing for mobile first views */
             .header, .marketing, .footer {
                 padding-left: 15px;
                 padding-right: 15px;
             }
-            /* Custom page header */
             .header {
                 border-bottom: 1px solid #e5e5e5;
             }
@@ -61,20 +43,17 @@
             h4{
             font-size: 14px;
             }
-            /* Make the masthead heading the same height as the navigation */
             .header h3 {
                 margin-top: 0;
                 margin-bottom: 0;
                 line-height: 40px;
                 padding-bottom: 19px;
             }
-            /* Custom page footer */
             .footer {
                 padding-top: 19px;
                 color: #777;
                 border-top: 1px solid #e5e5e5;
             }
-            /* Customize container */
             @media(min-width: 768px) {
                 .container {
                     max-width: 730px;
@@ -83,7 +62,6 @@
             .container-narrow > hr {
                 margin: 30px 0;
             }
-            /* Main marketing message and sign up button */
             .jumbotron {
                 text-align: center;
                 border-bottom: 1px solid #e5e5e5;
@@ -92,7 +70,6 @@
                 font-size: 21px;
                 padding: 14px 24px;
             }
-            /* Supporting marketing content */
             .marketing {
                 margin: 40px 0;
             }
@@ -152,12 +129,12 @@
             </div> 
             <p></p>
             <p>
-            <a id="show-example2" onclick="false" href="rides/new">I'm ready to request a ride!</a>
+            <a href="rides/new">I'm ready to request a ride!</a>
 
-            <div id="example2" style="display:none">
-            <h3>Only University of Rochester undergraduates may use this service. You will be redirected to sign in momentarily.</h3>
+           <!-- <div id="example2" style="display:none">
+            <h3>Only University of Rochester undergraduates may use this service. You will be redirected to sign in momentarily.</h3> </div> -->
             </center>
-            </div>
+            
             </div>
             <div class="footer">
                 <p>&copy; DMS | Capstone</p>
