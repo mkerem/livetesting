@@ -31,6 +31,12 @@
 
         <br><b>View requests by date:</b>
 
+        <br>
+        <div class="date">
+          <input class="datepicker" data-date-format="mm/dd/yyyy">
+        </div>
+<%= link_to "March 1st", dispatch_path(date: "2015-03-01") %>
+
         <br><br>
         Did someone just call? <a id="show-example" onclick="false">Insert the data manually.</a> </h4>
 
@@ -49,4 +55,8 @@
             <div id="completed-rides">
                 <%= render 'requests_table', rides: @completed_rides %>
             </div>
+
+    <script>
+      $(".datepicker").datepicker();
+    </script>
 </body>
