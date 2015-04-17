@@ -13,4 +13,5 @@
  *= require_tree .
  *= require_self
  *= require_rails_bootstrap_forms
+ *= require bootstrap-datepicker3
  */
